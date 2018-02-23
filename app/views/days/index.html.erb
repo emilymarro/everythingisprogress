@@ -1,0 +1,19 @@
+<div class = 'index'>
+<h2>
+  Daily Journal
+</h2>
+</div>
+
+
+<div class = 'index'>
+<ul>
+  <% @days.each do |day| %>
+    <li>
+      <%= link_to day.date, day_path(day) %>
+      <%= day.journal %>
+    </li>
+  <% end %>
+</ul>
+
+</div>
+
