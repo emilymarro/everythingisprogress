@@ -13,6 +13,11 @@ class DaysController < ApplicationController
           @points = @activity.points
       end
     @activities = @day.activities
+    total = 0
+    @activities.each do |activity|
+      total += activity.points.to_i
+    end
+    @total = total
   end
 
 # Client.find_by first_name:

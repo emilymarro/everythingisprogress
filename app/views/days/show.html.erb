@@ -12,10 +12,12 @@
   Points: <%= activity.points %><br />
 <% end %>
 
+<h2>Total points: <%= @total %> </h2>
+
 </div>
 
 <%= link_to "Edit this journal?", edit_day_path(@day) %>
-<%= link_to 'Add more accomplishments', activities_new_path %>
+<%= link_to 'Add more accomplishments', new_activity_path %>
 
 <%= form_for @day, html: {method: "delete"} do |f| %>
    <%= f.submit "Delete this day?" %>

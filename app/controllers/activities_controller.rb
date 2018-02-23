@@ -20,7 +20,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
       if @activity.save
-        redirect_to activities_path
+        redirect_to days_path
       else
         redirect_to "/"
       end
