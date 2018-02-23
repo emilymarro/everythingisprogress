@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <% @activities.each do |activity| %>
+      <li>
+        <%= link_to activity.actname, activity_path(activity) %>
+        <%= activity.points %>
+      </li>
+      <% end %>
+   </ul>
+ </div>

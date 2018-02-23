@@ -6,14 +6,20 @@
 
 
 <div class = 'index'>
-<ul>
-  <% @activities.each do |activity| %>
-    <li>
-      <%= link_to activity.actname, activity_path(activity) %>
-      <%= activity.points %>
-    </li>
-  <% end %>
-</ul>
+
+    <ul>
+      <% @activities.each do |activity| %>
+        <li>
+          <%= link_to activity.actname, activity_path(activity) %>
+          <%= activity.points %>
+        </li>
+        <% end %>
+    </ul>
+
+
+
+
+<h2>Total points: <%= @total %>
 
 </div>
 

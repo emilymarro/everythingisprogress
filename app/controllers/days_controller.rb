@@ -2,11 +2,21 @@ class DaysController < ApplicationController
 
   def index
     @days = Day.all
+    @activities = Activity.all
   end
 
   def show
     @day = Day.find(params[:id])
+    @activity = Activity.find(params[:id])
+      if @activity.day_id == @day.id
+          @name = @activity.actname
+          @points = @activity.points
+      end
+    @activities = @day.activities
   end
+
+# Client.find_by first_name:
+
 
   def new
     @day = Day.new

@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<%= render partial: "application/activity", locals: {activity: @name}%>
+  <%= render partial: "application/activity", locals: {activity: @points}%><p>points</p>

@@ -2,6 +2,11 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    total = 0
+    @activities.each do |activity|
+      total += activity.points.to_i
+    end
+    @total = total
   end
 
   def show

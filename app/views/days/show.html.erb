@@ -6,10 +6,16 @@
   <p id = "journal">
     <%= @day.journal %>
   </p>
+
+<% @activities.each do |activity| %>
+  Accomplishment: <%= activity.actname %><br />
+  Points: <%= activity.points %><br />
+<% end %>
+
 </div>
 
-
 <%= link_to "Edit this journal?", edit_day_path(@day) %>
+<%= link_to 'Add more accomplishments', activities_new_path %>
 
 <%= form_for @day, html: {method: "delete"} do |f| %>
    <%= f.submit "Delete this day?" %>
