@@ -1,1 +1,19 @@
-show.html.erb
+<div class = "show">
+  <h1>
+    <%= @day.date %>
+  </h1>
+
+  <p id = "journal">
+    <%= @day.journal %>
+  </p>
+</div>
+
+
+<%= link_to "Edit this journal?", edit_day_path(@day) %>
+
+<%= form_for @day, html: {method: "delete"} do |f| %>
+   <%= f.submit "Delete this day?" %>
+<% end %>
+
+
+<%= link_to 'Back to list', days_path %>

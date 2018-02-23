@@ -1,1 +1,8 @@
-new.html.erb
+<%= form_for @activity do |f| %>
+  <%= f.text_field :actname, placeholder: "Activity" %>
+  <%= f.number_field :points, placeholder: "Points" %>
+  <%= f.collection_select(:day_id, Day.all, :id, :date ) %>
+  <%= f.submit "Add 'em to the log!"%>
+<% end %>
+
+

@@ -1,1 +1,23 @@
-index.html.erb
+<div class = 'index'>
+<h2>
+  Today's Wins!
+</h2>
+</div>
+
+
+<div class = 'index'>
+<ul>
+  <% @activities.each do |activity| %>
+    <li>
+      <%= link_to activity.actname, activity_path(activity) %>
+      <%= activity.points %>
+    </li>
+  <% end %>
+</ul>
+
+</div>
+
+<div class = 'index'>
+<%= link_to "Add an Accomplishment", new_activity_path %>
+</div>
+

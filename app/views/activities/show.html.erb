@@ -1,1 +1,20 @@
-show.html.erb
+<div class = "show">
+
+  <h1>
+    <%= @activity.actname %>
+  </h1>
+
+  <h1>
+    <%= @activity.points %> points
+  </h1>
+</div>
+
+
+<%= link_to "Edit this accomplishment?", edit_activity_path(@activity) %>
+
+<%= form_for @activity, html: {method: "delete"} do |f| %>
+   <%= f.submit "Delete this accomplishment?" %>
+<% end %>
+
+
+<%= link_to 'Back to list', activity_path %>
