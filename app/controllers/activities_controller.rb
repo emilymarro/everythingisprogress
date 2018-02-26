@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
     # @day_id = current_user.date.id
     @activity = Activity.new(activity_params)
       if @activity.save
-        redirect_to activities_path
+        redirect_to days_path
       else
         puts "activity not saved!"
         redirect_to "/"
@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
     if @activity.update_attributes(activity_params)
-      redirect_to activities_path
+      redirect_to days_path
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to activities_path
+    redirect_to days_path
   end
 
 private

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'links/index'
+
   get 'instructions/index'
 
   get 'about/index'
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
   resources :days
   resources :activities
   resources :users
+  resources :instructions
 end

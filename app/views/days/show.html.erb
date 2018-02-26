@@ -7,21 +7,25 @@
     <%= @day.journal %>
   </p>
 
-<% @activities.each do |activity| %>
-  Accomplishment: <%= activity.actname %><br />
-  Points: <%= activity.points %><br />
-<% end %>
+  <div class="daily">
+    <% @activities.each do |activity| %>
+      Accomplishment: <%= activity.actname %><br />
+      Points: <%= activity.points %><br />
+      <%= link_to 'Edit', edit_activity_path %>
+    <% end %>
+  </div>
 
-<h2>Total points: <%= @total %> </h2>
+  <h2>Total points: <%= @total %> </h2>
+
+
+  <%= link_to "Edit this journal?", edit_day_path(@day) %>
+  <%= link_to 'Add more accomplishments', new_activity_path %>
+
+  <%= form_for @day, html: {method: "delete"} do |f| %>
+     <%= f.submit "Delete this day?" %>
+  <% end %>
+
+
+  <%= link_to 'Back to list', days_path %>
 
 </div>
-
-<%= link_to "Edit this journal?", edit_day_path(@day) %>
-<%= link_to 'Add more accomplishments', new_activity_path %>
-
-<%= form_for @day, html: {method: "delete"} do |f| %>
-   <%= f.submit "Delete this day?" %>
-<% end %>
-
-
-<%= link_to 'Back to list', days_path %>
