@@ -1,3 +1,4 @@
+<div class="new">
 <%= form_for @activity do |f| %>
   <%= f.text_field :actname, placeholder: "Activity" %>
   <%= f.number_field :points, placeholder: "Points" %>
@@ -5,5 +6,5 @@
   <%= f.hidden_field :user_id, value: @user_id %>
   <%= f.submit "Add 'em to the log!"%>
 <% end %>
-
+</div>
 

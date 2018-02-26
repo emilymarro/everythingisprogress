@@ -2,10 +2,7 @@
 <h2>
   Daily Journal
 </h2>
-</div>
 
-
-<div class = 'index'>
 <ul>
   <% @days.each do |day| %>
     <li>
@@ -15,10 +12,7 @@
   <% end %>
 </ul>
 
+<a class="btn btn-primary btn-lg" href="/days/new" role="button">Add New Day &raquo;</a></p>
 
-</div>
-
-<div class = 'index'>
-<%= link_to "New Day", new_day_path %>
 </div>
 
