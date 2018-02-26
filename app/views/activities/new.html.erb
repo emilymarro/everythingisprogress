@@ -1,10 +1,8 @@
 <%= form_for @activity do |f| %>
   <%= f.text_field :actname, placeholder: "Activity" %>
   <%= f.number_field :points, placeholder: "Points" %>
-  <%= f.collection_select(:day_id, Day.all, :id, :date ) %>
-  <%= f.hidden_field :user_id %>
-  <%= f.hidden_field :created_at %>
-  <%= f.hidden_field :updated_at %>
+  <%= f.collection_select(:day_id, Day.where(user_id: current_user.id), :id, :date ) %>
+  <%= f.hidden_field :user_id, value: @user_id %>
   <%= f.submit "Add 'em to the log!"%>
 <% end %>
 

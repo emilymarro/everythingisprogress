@@ -8,7 +8,7 @@ class DaysController < ApplicationController
 
   def show
     @day = Day.find(params[:id])
-    # @activity = Activity.find(params[:id])
+    # @activity = Activity.where(user_id: current_user.id)
     #   if @activity.day_id == @day.id
     #       @name = @activity.actname
     #       @points = @activity.points
@@ -30,8 +30,6 @@ class DaysController < ApplicationController
   def create
     puts current_user.id
     @user_id = current_user.id
-    #had to include this to save to individual user
-    # @day = current_user.days.build(params[:day_params])
     @day = Day.new(day_params)
       if @day.save
         redirect_to days_path

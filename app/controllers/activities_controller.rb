@@ -1,8 +1,9 @@
 class ActivitiesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
 
   def index
-    @activities = Activity.all
+    @activities = Activity.where(user_id: current_user.id)
+    puts current_user.id
     total = 0
     @activities.each do |activity|
       total += activity.points.to_i
@@ -23,8 +24,7 @@ class ActivitiesController < ApplicationController
     puts current_user.id
     @user_id = current_user.id
     # @day_id = current_user.date.id
-    #had to include this to save to individual user
-    @activity = current_user.activities.build(params[:activity_params])
+    @activity = Activity.new(activity_params)
       if @activity.save
         redirect_to activities_path
       else
