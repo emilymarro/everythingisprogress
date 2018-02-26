@@ -20,13 +20,15 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    puts current_user.id
     @user_id = current_user.id
-    # @day_id = current_day.id
+    # @day_id = current_user.date.id
     #had to include this to save to individual user
     @activity = current_user.activities.build(params[:activity_params])
       if @activity.save
-        redirect_to days_path
+        redirect_to activities_path
       else
+        puts "activity not saved!"
         redirect_to "/"
       end
   end
@@ -52,7 +54,7 @@ class ActivitiesController < ApplicationController
 
 private
   def activity_params
-    params.require(:activity).permit(:actname, :points, :day_id, :user_id)
+    params.require(:activity).permit(:actname, :points, :day_id, :user_id, :created_at, :updated_at)
   end
 
 
