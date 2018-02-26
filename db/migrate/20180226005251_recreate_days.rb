@@ -1,4 +1,4 @@
-class RereateDays < ActiveRecord::Migration[5.1]
+class RecreateDays < ActiveRecord::Migration[5.1]
   def change
     create_table :days do |t|
         t.date :date
