@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @activities = Activity.all
@@ -15,10 +16,14 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @user_id = current_user.id
   end
 
   def create
-    @activity = Activity.new(activity_params)
+    @user_id = current_user.id
+    # @day_id = current_day.id
+    #had to include this to save to individual user
+    @activity = current_user.activities.build(params[:activity_params])
       if @activity.save
         redirect_to days_path
       else
@@ -47,8 +52,10 @@ class ActivitiesController < ApplicationController
 
 private
   def activity_params
-    params.require(:activity).permit(:actname, :points, :day_id)
+    params.require(:activity).permit(:actname, :points, :day_id, :user_id)
   end
+
+
 
 end
 

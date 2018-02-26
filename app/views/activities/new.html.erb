@@ -2,6 +2,9 @@
   <%= f.text_field :actname, placeholder: "Activity" %>
   <%= f.number_field :points, placeholder: "Points" %>
   <%= f.collection_select(:day_id, Day.all, :id, :date ) %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :created_at %>
+  <%= f.hidden_field :updated_at %>
   <%= f.submit "Add 'em to the log!"%>
 <% end %>
 
