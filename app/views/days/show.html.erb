@@ -11,15 +11,16 @@
     <% @activities.each do |activity| %>
       Accomplishment: <%= activity.actname %><br />
       Points: <%= activity.points %><br />
-      <%= link_to 'Edit', edit_activity_path %>
+      <a class="btn btn-primary btn-sm" href="/activities/<%= activity.id %>/edit" role="button">Edit &raquo;</a></p>
     <% end %>
   </div>
 
   <h2>Total points: <%= @total %> </h2>
 
 
-  <%= link_to "Edit this journal?", edit_day_path(@day) %>
-  <%= link_to 'Add more accomplishments', new_activity_path %>
+<a class="btn btn-primary btn-lg" href="/activities/new" role="button">Add Accomplishment &raquo;</a></p>
+<a class="btn btn-primary btn-md" href="/days/<%= @day.id %>/edit" role="button">Edit journal &raquo;</a></p>
+
 
   <%= form_for @day, html: {method: "delete"} do |f| %>
      <%= f.submit "Delete this day?" %>
@@ -29,3 +30,4 @@
   <%= link_to 'Back to list', days_path %>
 
 </div>
+

@@ -122,5 +122,11 @@ solution:
 (In other controllers:)
     @days = Day.where(user_id: current_user.id)
 
+issue: once I deployed to heroku, the logout would lead to a "page doesn't exist" error
+solution: 
+(In routes:)
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
 
 
