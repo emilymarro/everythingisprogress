@@ -3,6 +3,10 @@
   font-weight: bold;
 }
 
+#about p {
+font-size: 20px;
+}
+
 #journal {
   font-size: 30px;
   font-style: italic;
@@ -11,6 +15,28 @@
 
 #days {
   font-size: 20px;
+}
+
+#editreg {
+  margin-bottom: 400px;
+  padding-bottom: 400px;
+}
+
+#links {
+  padding-top:70px;
+  padding-bottom:200px;
+  font-size: 25px;
+}
+
+#login {
+  padding-bottom: 300px;
+
+}
+
+#register {
+  padding-top: 40px;
+  margin-bottom: 300px;
+  padding-bottom: 300px;
 }
 
 .daily {
@@ -48,12 +74,12 @@ body {
   background-color: #6589B9;
   padding-top: 40px;
   padding: 10px;
-  // padding-top:70px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .index {
   padding-top:70px;
-  padding-bottom:100px;
+  padding-bottom:200px;
 }
 
 .new {
