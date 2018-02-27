@@ -129,4 +129,9 @@ solution:
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end
 
+issue: change format of date from YEAR/DY/MO
+solution: (in views) add strftime("%d %B %Y")
 
+issue: sort days index by date
+solution: (in controller)
+@days = Day.where(user_id: current_user.id).order("date ASC").all

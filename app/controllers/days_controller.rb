@@ -2,11 +2,8 @@ class DaysController < ApplicationController
   before_action :authenticate_user!
   def index
     @days = Day.where(user_id: current_user.id).order("date ASC").all
-    # @activities = Activity.where(user)
     puts current_user.id
   end
-
-
 
 
   def show
