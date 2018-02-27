@@ -7,7 +7,7 @@
 <ul>
   <% @days.each do |day| %>
     <li>
-      <%= link_to day.date, day_path(day) %>
+      <%= link_to day.date.strftime("%d %B %Y"), day_path(day) %>
       <%= day.journal %>
     </li>
   <% end %>
