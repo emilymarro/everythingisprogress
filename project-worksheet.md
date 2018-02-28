@@ -1,5 +1,6 @@
 # Project Overview
 
+
 Important: I started my entire app over at one point. My first few days of work can be seen in this repo: (https://git.generalassemb.ly/emilymarro/hopeful)
 
 ## Project Schedule
@@ -22,7 +23,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | 
 |---|---|
 |Day 1: Fri 2/16 | Wireframes, Priority Matrix, Schedule, Time Estimates |
+
 |Day 2: Tue 2/20 | Pseudocode\Actual code|
+
 |Day 3: Wed 2/21 | Work on project  |
 |Day 4: Thur 2/22 | Work on project  |
 |Day 5: Fri 2/23 | Work on project  |
@@ -32,6 +35,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Project Description
 
+<<<<<<< HEAD
 This app is intended for people who suffer with any level of depression. Sometimes it can be hard to get motivated to do ANYTHING to feel better when you're depressed. This app allows users to log all of the little wins they have throughout the day - whether it's going to therapy, calling a friend, exercising, or even just getting into the shower. Each activity gets points, so you can track how you were feeling from day to day and use this as a resource to discuss your week with your therapist.
 
 ## Wireframes
@@ -65,7 +69,6 @@ Incorporate an API to search for local events
 ## Functional Components
 
 
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 
 | Component 1 | H | 10hrs| 12hrs | 12hrs |
@@ -73,12 +76,12 @@ Incorporate an API to search for local events
 | CRUD | H | 10hrs | 20hrs | 20hrs |
 | Styling | M | 10hrs | 6 hrs | 6hrs |
 | Auth | H | 5 hrs | 10 hrs| 10hrs|
-| Links | L | 2hrs |  |  |
+| Links | L | 2hrs | 30min | 30 min |
 | Readme/wrkst | 1hr | 1.5hrs | 1.5hrs |
-| Deploy | 2hrs | | |
+| Deploy | 2hrs | 2 hr| 2hr |
 
-Total estimated:
-Actual total: 
+Total estimated: 30hr
+Actual total: 40hr
 
 
 
@@ -135,3 +138,4 @@ solution: (in views) add strftime("%d %B %Y")
 issue: sort days index by date
 solution: (in controller)
 @days = Day.where(user_id: current_user.id).order("date ASC").all
+
